@@ -1,23 +1,31 @@
 import org.testng.annotations.Test;
 import pageobject.LoginPage;
 
-import static org.testng.AssertJUnit.assertEquals;
-
-public class LoginTest extends BaseTest{
-    LoginPage loginPage = new LoginPage();
-
-
-    @Test
-    void wikipediaAccountLogin(){
-        loginPage.clickSingIn();
-        loginPage.inputLogin("Potorzhynskyi");
-        loginPage.inputPassword("Potorzhynskyi51090");
-        loginPage.clickEntrance();
-
-      assertEquals("The result is not same", loginPage.getTitle(), "Potorzhynskyi");
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 
+
+public class LoginTest extends BaseTest {
+
+    @Test(groups = {"Smoke"})
+    void wikipediaAccountLogin() {
+        new LoginPage()
+                .clickSingIn()
+                .inputLogin("Potorzhynskyi")
+                .inputPassword("Potorzhynskyi51090")
+                .clickEntrance();
+
+
+
+
+        assertThat(new LoginPage().getTitle())
+                .as("The result is not same")
+                .isEqualTo("Potorzhynskyi");
     }
+
+
+
+
 
 }

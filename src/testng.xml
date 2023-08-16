@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Simple suite">
+
+    <groups>
+        <define name="All">
+            <include name="Smoke"/>
+            <include name="Regression"/>
+        </define>
+
+        <run>
+            <include name="All"/>
+            <include name="Smoke"/>
+            <include name="Regression"/>
+        </run>
+    </groups>
+
+    <test name="Search/Login">
+        <classes>
+            <class name="SearchTest"/>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="listeners.RetryAnalyzer"/>
+    </listeners>
+
+</suite>

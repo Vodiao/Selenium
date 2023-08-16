@@ -9,15 +9,17 @@ public class BaseTest {
 
     WebDriver driver = null;
 
-    @BeforeMethod
+    @BeforeMethod(groups = {"All","Smoke","Regression"})
     public void setUp() {
         driver = getDriver();
         driver.manage().window().maximize();
         driver.get("https://ru.wikipedia.org/");
     }
 
-    @AfterMethod
+    @AfterMethod(groups = {"All","Smoke","Regression"})
     public void tearDown(){
         closeDriver();
     }
+
+
 }

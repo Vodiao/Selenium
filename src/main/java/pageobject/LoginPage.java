@@ -5,32 +5,56 @@ import org.openqa.selenium.By;
 
 public class LoginPage extends BaseMethod {
 
+    private String username;
+
+    private String password;
+
     private final By singIn = By.xpath("//a[@accesskey='o']/span");
-    private final By login = By.xpath("//input[@id='wpName1']");
-    private final By password = By.xpath("//input[@id='wpPassword1']");
+    private final By loginField = By.xpath("//input[@id='wpName1']");
+    private final By passwordField = By.xpath("//input[@id='wpPassword1']");
 
     private final By entrance = By.xpath("//button[@id='wpLoginAttempt']");
 
     private final By nickname = By.xpath("//a[@accesskey='.']/span");
 
+    private final By messageError = By.xpath("//div[@class='cdx-message__content']");
 
-    public void clickSingIn(){
+
+    public LoginPage clickSingIn(){
         click(singIn,10);
+        return this;
     }
 
-    public void inputLogin(String text){
-     input(login,text, 10);
+    public LoginPage inputLogin(String username){
+        this.username = username;
+        input(loginField,username, 10);
+        return this;
     }
 
-    public void inputPassword(String text){
-        input(password,text, 10);
+    public LoginPage inputPassword(String password){
+        this.password = password;
+        input(passwordField,password, 10);
+        return this;
     }
 
-    public void clickEntrance(){
+    public LoginPage clickEntrance(){
         click(entrance,10);
+        return this;
     }
 
     public String getTitle(){
         return  getTextFromElement(nickname,10);
     }
+
+    public String getNotValidPass (){
+        return getTextFromElement(messageError,10);
+    }
+
+    public String getNotValidUser (){
+        return getTextFromElement(messageError,10);
+    }
+
+
+
+
 }

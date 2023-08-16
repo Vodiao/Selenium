@@ -1,19 +1,21 @@
 import org.testng.annotations.Test;
 import pageobject.SearchPage;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
 
 public class SearchTest extends BaseTest {
 
     SearchPage search = new SearchPage();
 
-    @Test
+
+    @Test(groups = {"Regression"})
     void shouldBeVisibleResultSearch() {
 
         search.fillText("Ubisoft");
         search.clickEnter();
 
-        assertEquals("Ubisoft", search.getTitle());
+        assertThat(search.getTitle()).isEqualTo("Ubisoft");
 
     }
 
