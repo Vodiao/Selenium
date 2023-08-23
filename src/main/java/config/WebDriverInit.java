@@ -24,7 +24,6 @@ public class WebDriverInit  {
     }
 
     public static void closeDriver (){
-
         driver.quit();
         driver = null;
     }

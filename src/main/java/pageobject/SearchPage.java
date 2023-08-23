@@ -12,7 +12,7 @@ public class SearchPage extends BaseMethod {
 
 
     public void fillText(String text) {
-        input(search, text, 15);
+        send(search, text, 15);
     }
 
     public void clickEnter(){

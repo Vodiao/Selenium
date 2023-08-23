@@ -11,6 +11,8 @@ public class SearchTest extends BaseTest {
 
     @Test(groups = {"Regression"})
     void shouldBeVisibleResultSearch() {
+        driver.manage().window().maximize();
+        driver.get("https://ru.wikipedia.org/");
 
         search.fillText("Ubisoft");
         search.clickEnter();

@@ -8,6 +8,8 @@ public class LoginNotValidPasswordTest extends BaseTest {
 
     @Test(dataProvider = "notValidPassword")
     void wikipediaNotValidPassword(String result) {
+        driver.manage().window().maximize();
+        driver.get("https://ru.wikipedia.org/");
         new LoginPage()
                 .clickSingIn()
                 .inputLogin("Potorzhynskyi")

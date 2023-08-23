@@ -12,8 +12,6 @@ public class BaseTest {
     @BeforeMethod(groups = {"All","Smoke","Regression"})
     public void setUp() {
         driver = getDriver();
-        driver.manage().window().maximize();
-        driver.get("https://ru.wikipedia.org/");
     }
 
     @AfterMethod(groups = {"All","Smoke","Regression"})

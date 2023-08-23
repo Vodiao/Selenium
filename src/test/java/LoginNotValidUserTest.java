@@ -9,6 +9,8 @@ public class LoginNotValidUserTest extends BaseTest{
 
     @Test(dataProvider = "notValidUser")
     void wikipediaNotValidUser(String result){
+        driver.manage().window().maximize();
+        driver.get("https://ru.wikipedia.org/");
         new LoginPage()
                 .clickSingIn()
                 .inputLogin(result)

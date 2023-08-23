@@ -2,6 +2,9 @@ package pageobject;
 
 import base.BaseMethod;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import static util.JSActions.jsClick;
 
 public class LoginPage extends BaseMethod {
 
@@ -21,19 +24,19 @@ public class LoginPage extends BaseMethod {
 
 
     public LoginPage clickSingIn(){
-        click(singIn,10);
+        click(singIn,5);
         return this;
     }
 
     public LoginPage inputLogin(String username){
         this.username = username;
-        input(loginField,username, 10);
+        send(loginField,username, 10);
         return this;
     }
 
     public LoginPage inputPassword(String password){
         this.password = password;
-        input(passwordField,password, 10);
+        send(passwordField,password, 10);
         return this;
     }
 
