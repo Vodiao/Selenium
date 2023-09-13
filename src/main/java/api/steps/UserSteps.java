@@ -8,40 +8,20 @@ import api.dto.response.DeleteUserResponseBuilder;
 import api.dto.response.GetDeletedUserBuilder;
 import api.dto.response.GetUserResponseBuilder;
 import api.dto.response.UserCreateResponseBuilder;
-//import api.endpoints.CreateUser;
 import api.endpoints.Endpoints;
-//import api.endpoints.UserByUserName;
 import api.endpoints.Schemas;
 import api.utils.Utils;
-import io.restassured.response.ValidatableResponse;
-import io.restassured.specification.RequestSpecification;
-import io.restassured.specification.ResponseSpecification;
+
 
 
 import static api.utils.Utils.toJson;
-import static java.nio.file.Files.delete;
+
 
 public class UserSteps extends Request {
 
     BaseRequestSpecification baseRequest = new BaseRequestSpecification();
     BaseResponseSpecification baseResponse = new BaseResponseSpecification();
 
-
-//    public ValidatableResponse createUser(UserBuilder user) {
-//        return post(baseRequest.request(), toJson(user), Endpoints.CREATE_USER.getValue(), baseResponse.OK());
-//
-//    }
-//
-//    public UserCreateResponseBuilder createUserResponse(UserBuilder user) {
-//        var response = post(baseRequest.request(), toJson(user), Endpoints.CREATE_USER.getValue(), baseResponse.OK(),
-//                Schemas.CREATE_USER_SCHEMA.getValue())
-//                .extract()
-//                .body()
-//                .asString();
-//
-//        return Utils.fromJson(response, UserCreateResponseBuilder.class);
-//
-//    }
 
     public UserCreateResponseBuilder createUser(UserBuilder user) {
 
