@@ -14,11 +14,11 @@ public class BaseResponseSpecification {
               .build();
   }
 
-  public ResponseSpecification responseNotFound(){
-      return new ResponseSpecBuilder()
-              .expectStatusCode(HttpStatus.SC_NOT_FOUND)
-              .build();
-  }
+    public  ResponseSpecification NotFound() {
+        return  new ResponseSpecBuilder()
+                .expectStatusCode(HttpStatus.SC_NOT_FOUND)
+                .build();
+    }
 
   public ResponseSpecification responseUnauthorized(){
       return new ResponseSpecBuilder()

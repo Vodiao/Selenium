@@ -22,6 +22,8 @@ public class LoginPage extends BaseMethod {
     private final By messageError = By.xpath("//div[@class='cdx-message__content']");
 
 
+
+
     public LoginPage clickSingIn(){
         click(singIn,5);
         return this;
