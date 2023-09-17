@@ -10,7 +10,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class SearchTest {
 
-    @Test
+    @Test(groups = {"Selen"})
     public void shouldBeVisibleArticleOdessa(){
         open("https://uk.wikipedia.org/");
         getWebDriver().manage().window().maximize();

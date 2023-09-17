@@ -26,6 +26,12 @@ public class BaseResponseSpecification {
               .build();
   }
 
+    public ResponseSpecification CREATED() {
+        return new ResponseSpecBuilder()
+                .expectStatusCode(HttpStatus.SC_CREATED)
+                .build();
+    }
+
 
 
 

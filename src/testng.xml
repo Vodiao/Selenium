@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Simple">
+
+    <test name="Search/Login" parallel="methods" thread-count="2">
+
+        <groups>
+            <define name="All"/>
+            <define name="Smoke"/>
+            <define name="Regression"/>
+            <define name="Selen"/>
+            <run>
+                <include name="All"/>
+                <include name="Smoke"/>
+                <include name="Regression"/>
+                <include name="Selen"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="selenide.SearchTest"/>
+            <class name="selenide.LoginTest"/>
+        </classes>
+    </test>
+</suite>

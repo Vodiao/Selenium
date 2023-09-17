@@ -2,7 +2,13 @@ package api.endpoints;
 
 public enum Endpoints {
     CREATE_USER("/user"),
-    USER_WITH_PARAM("/user/");
+    USER_WITH_PARAM("/user/"),
+
+    GET_TOKEN("/GenerateToken"),
+
+    BOOKS("/Books"),
+    USER("/User/");
+
 
     private final String endpoint;
 
