@@ -29,6 +29,9 @@ public class BaseMethod {
         return getWait(time).until(ExpectedConditions.presenceOfElementLocated(locator)).getText();
     }
 
+
+
+
     protected void click(By locator, int time){
         getWait(time).until(s->s.findElement(locator)).click();
     }
